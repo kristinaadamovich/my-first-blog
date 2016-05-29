@@ -4,19 +4,15 @@
         </head>
         <body>
             <div>
-                <h1><a href="">Enot's Blog</a></h1>
-            </div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
 
-            <div>
-                <p>published: 29.05.2016, 17:17</p>
-                <h2><a href="">Первая запись</a></h2>
-                <p>Завтра на работу. От этого хочется плакать. Конец.</p>
-            </div>
-
-            <div>
-                <p>published: 29.05.2016, 17:20</p>
-                <h2><a href="">Вторая запись</a></h2>
-                <p>Бла-бла-бла.</p>
-            </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
         </body>
     </html>
